@@ -17,7 +17,9 @@ A Webapp built with the Django framework displaying information and events for t
 # NOTES
 
 Site built from template: https://startbootstrap.com/template-overviews/freelancer/
+
 Django Tutorial: https://docs.djangoproject.com/en/1.10/intro/tutorial01/
+
 Host Django on Google App Engine: https://cloud.google.com/python/django/appengine
 
 
