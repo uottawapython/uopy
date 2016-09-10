@@ -13,6 +13,15 @@ A Webapp built with the Django framework displaying information and events for t
 - Visit <b>http://127.0.0.1:8000/</b> to view the running app
 - Visit <b>http://127.0.0.1:8000/admin/</b> to log into the admin site
 
+# screenshots
+
+![](./screenshot1.png)
+
+![](./screenshot2.png)
+
+![](./screenshot3.png)
+
+
 
 # NOTES
 
