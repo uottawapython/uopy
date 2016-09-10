@@ -26,5 +26,7 @@ Host Django on Google App Engine: https://cloud.google.com/python/django/appengi
 # DEV NOTES
 
 add twitter widget in contact section
+
 add interactive python interpreter: http://www.skulpt.org/
+
 add newsletter sign up form in contact section
