@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>UO Python Club</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/vendor/bootstrap/css/bootstrap.min.css' %}">
+
+    <!-- Theme CSS -->
+    <link href="{% static 'polls/css/freelancer.min.css' %}" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{% static 'polls/css/style.css' %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static 'polls/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- skulpt min js -->
+    <script src="{% static 'polls/dist/skulpt.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'polls/dist/skulpt-stdlib.js' %}" type="text/javascript"></script>
+
+    <!-- editor styles -->
+    <style>
+      .editor-container{
+        height: 500px;
+        background: grey;
+        border-radius: 12px;
+      }
+      #editor {
+          margin: 0;
+          position: absolute;
+          height: 500px;
+          left: 0;
+          right: 0;
+          border: none;
+          border-radius: 12px;
+          font-size: 16px;
+      }
+      .run-code{
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      #mycanvas{
+        border: #333 solid 1px;
+        border-radius: 12px;
+        height: 400px;
+        width: 400px;
+      }
+      #output{
+        height: 40px;
+      }
+      @media (max-width: 700px) {
+        .editor-section, .editor-container, #editor, .run-code, #mycanvas, #output, .editor-heading{
+          display: none;
+        }
+      }
+    </style>
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">Ottawa U > Python Club</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#events">Events</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="{% static 'polls/img/hybrid-logo.png' %}" alt="">
+                    <div class="intro-text">
+                        <span class="name">Learn Python</span>
+                        <span class="skills">Enthusiastic Community - Beginner Friendly</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Grid Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About</h2>
+                    <hr class="solid-hr-black">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center about-text">
+                    We're a growing volunteer run community of Python users based out of the University of Ottawa! We bring together Pythonistas from academic, web, science, data, visual effects and other backgrounds under one roof to discuss all things related to Python. Our Goal is to teach a basic level of Python to any student. Come out and learn Python
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 about-block">
+                <img class="center-block img-circle img-responsive profile" src="{% static 'polls/img/gmg.jpeg' %}">
+                <h3 class="text-center">Guinsly Mondésir</h3>
+                <p class="text-center">Club President and Masters candidate in Information studies at University of Ottawa</p>
+              </div>
+              <div class="col-md-4 about-block">
+                <img class="center-block img-circle img-responsive profile" src="{% static 'polls/img/nabin.jpg' %}">
+                <h3 class="text-center">Nabin Subedi</h3>
+                <p class="text-center">Vice President of club social events. Masters candidate in Electronic Business at Univeristy of Ottawa</p>
+              </div>
+              <div class="col-md-4 about-block">
+                <img class="center-block img-circle img-responsive profile" src="{% static 'polls/img/tae.jpg' %}">
+                <h3 class="text-center">Taiwo Adeife</h3>
+                <p class="text-center">Club Vice President. Masters candidate in Electronic Business at University of Ottawa</p>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="success" id="events">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Events</h2>
+                    <hr class="solid-hr">
+                </div>
+            </div>
+            <div class="row">
+
+              {% if event_list %}
+
+                  {% for event in event_list %}
+                      <h3>{{ event.event_title }}</h3>
+                      <p>{{ event.event_date }}</p>
+                      <p>Location: {{ event.event_location }}</p>
+                      <p>Duration: {{ event.event_duration_min }} min</p>
+                      <p>Cost: ${{ event.event_cost }}</p>
+                      <p>
+                        {{ event.event_description }}
+                        {% if event.votes != 0 %}
+                        This event has {{ event.votes }} votes.
+                        {% endif %}
+                      </p>
+                      <hr class="solid-hr">
+                  {% endfor %}
+
+              {% else %}
+                  <p>Contact us and set something up today!</p>
+              {% endif %}
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Contact</h2>
+                    <hr class="solid-hr-black">
+                    <h3>uottawapython at gmail dot com</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Editor Section -->
+    <section id="editor-section">
+        <div class="container">
+          <div class="row">
+
+            <h2 class="text-center editor-heading">Try Python Right Here</h2>
+            <hr class="solid-hr-black editor-heading">
+
+              <!-- Editor Markup -->
+              <div class="col-xs-12 col-md-6 col-md-offset-3 editor-container">
+
+<pre id="editor">import turtle
+import random
+
+# *** ***
+# Press the "run" button below and
+# see what Python can do!
+#
+# feel free to modify the code below
+# and start learning Python now!
+# *** ***
+
+r = random
+t = turtle.Turtle()
+
+print "Hello World"
+
+for i in range(8):
+  for j in ["green", "blue", "pink", "orange"]:
+    t.pencolor(j)
+    t.left(r.random() * 360)
+    t.circle(r.random() * 100)
+</pre>
+
+              </div> <!-- Editor Markup ends -->
+          </div>
+
+          <!-- Sculpt run button and output areas -->
+          <div class="row">
+            <div class="col-xs-12 col-md-6 col-md-offset-3">
+              <button class="btn btn-primary center-block run-code" type="button" onclick="runit()">Run</button>
+              <pre id="output"></pre>
+              <div class="center-block" id="mycanvas"></div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4"></div>
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Scripts for Ace -->
+    <script src="{% static 'polls/src-min/ace.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script>
+
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/twilight");
+        editor.session.setMode("ace/mode/python");
+
+    </script>
+
+    <!-- Scripts for Sculpt -->
+    <script type="text/javascript">
+
+    function outf(text) {
+        var mypre = document.getElementById("output");
+        mypre.innerHTML = mypre.innerHTML + text;
+    }
+    function builtinRead(x) {
+        if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+                throw "File not found: '" + x + "'";
+        return Sk.builtinFiles["files"][x];
+    }
+
+    function runit() {
+       var prog = editor.getValue();
+       var mypre = document.getElementById("output");
+       mypre.innerHTML = '';
+       Sk.pre = "output";
+       Sk.configure({output:outf, read:builtinRead});
+       (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
+       var myPromise = Sk.misceval.asyncToPromise(function() {
+           return Sk.importMainWithBody("<stdin>", false, prog, true);
+       });
+       myPromise.then(function(mod) {
+           console.log('success');
+       },
+           function(err) {
+           console.log(err.toString());
+       });
+    }
+    </script>
+
+    <!-- jQuery -->
+    <script src="{% static 'polls/vendor/jquery/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'polls/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="{% static 'polls/js/freelancer.min.js' %}"></script>
+
+</body>
+
+</html>
