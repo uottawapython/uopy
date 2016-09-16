@@ -104,6 +104,7 @@ if os.getenv("SERVER_SOFTWARE", "").startswith("Google App Engine"):
 
 else:
     # local dev server
+    '''
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
@@ -113,7 +114,17 @@ else:
             'NAME': 'main',
         }
     }
+    '''
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 # [END db_setup]
+
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
