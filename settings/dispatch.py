@@ -9,5 +9,4 @@ if 'guinsly' in socket.gethostname():
 else:
     from .production import *
     #print('prod--settings')
-#this file won't be load in git and in the
 '''
