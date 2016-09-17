@@ -1,0 +1,5 @@
+django==1.9.3
+django-extensions==1.6.1
+django-bootstrap-pagination==1.5.1
+markdown==2.6.6
+django-model-utils
