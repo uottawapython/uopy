@@ -6,9 +6,11 @@ A Webapp built with the Django framework displaying information and events for t
 # How to Run Locally
 
 - Fork this repo
-- Download Django
-- Check if it's installed with <b>python -m django --version</b>
 - Navigate to the root directory of the project
+- <b>pip install -r requirements/development.txt</b>
+- <b>python manage.py migrate</b>
+- Run the tests
+- <b>py.test -v</b>
 - Run <b>python manage.py runserver</b> to start the local server
 - Visit <b>http://127.0.0.1:8000/</b> to view the running app
 - Visit <b>http://127.0.0.1:8000/admin/</b> to log into the admin site (username: admin, pass: admin123)
