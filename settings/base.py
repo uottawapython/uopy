@@ -10,8 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
-WSGI_APPLICATION = 'pyclub2.wsgi.application'
-ROOT_URLCONF = 'pyclub2.urls'
+WSGI_APPLICATION = 'pyclub.wsgi.application'
+ROOT_URLCONF = 'pyclub.urls'
 SITE_ID=1
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
