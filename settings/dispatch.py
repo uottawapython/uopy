@@ -1,6 +1,6 @@
 import socket
 
-from .development import *
+from .production import *
 '''
 #My laptop is name 'Guinsly-thinkpad-lenovo'
 if 'guinsly' in socket.gethostname():

@@ -1,0 +1,74 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+/* vertical-centered image */
+.center-image {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#home {https://pycon.sg/static/img/header.jpg
+  background: url("../img/section-main-bg.2388d8b71e72.png") no-repeat center center fixed;
+  background: url("../img/header.jpg") no-repeat center center fixed;
+  #background: url("../img/header_neu.jpg") no-repeat center center fixed;
+  background-position: 0px 50px;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+}
+
+.colored-text {
+    color: #25CBF5;
+}
+
+#gigs {
+  background: url("../img/50943129/SAN-FRAN-BLACK-AND-WHITE.jpg") no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  height: 800px;
+  /* overwrites the default parallax height */
+}
+
+#discography-layover {
+  background: url("../img/header_neu.jpg") no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  height: 400px;
+}
+
+/* Custom styles */
+h1, h2, h3, .navbar {
+  font-family: 'Montserrat', sans-serif;
+}
+
+#discography {
+  background-color: #333;
+  color: #ffffff;
+}
+
+#discography .featurette-divider {
+  color: #fff;
+}
+
+#gigs .panel {
+  opacity: 0.8;
+}
+
+.pad-md {
+  padding: 50px 0;
+}
+
+#gigs h2 {
+  color: #fff;
+}

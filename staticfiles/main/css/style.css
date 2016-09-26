@@ -1,0 +1,26 @@
+header, #events{
+  background: #Df4526;
+}
+.profile{
+  border: #99172F solid 10px;
+}
+.about-text{
+  font-size: 18px;
+  margin-bottom: 80px;
+}
+#contact h3{
+  color: grey;
+}
+.solid-hr{
+  border-color: white;
+  border-top: solid 5px;
+  max-width: 250px;
+}
+.solid-hr-black{
+  border-color: #222;
+  border-top: solid 5px;
+  max-width: 250px;
+}
+.about-block{
+  margin-bottom: 60px;
+}

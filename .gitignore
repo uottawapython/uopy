@@ -25,7 +25,6 @@ cache/
 logs/*
 lib
 
-
 secret_key.txt
 #settings/production.py
 staticfiles_dev/
