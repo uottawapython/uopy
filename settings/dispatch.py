@@ -1,7 +1,5 @@
 import socket
 
-from .production import *
-'''
 #My laptop is name 'Guinsly-thinkpad-lenovo'
 if 'guinsly' in socket.gethostname():
     from .development import *
@@ -9,4 +7,3 @@ if 'guinsly' in socket.gethostname():
 else:
     from .production import *
     #print('prod--settings')
-'''

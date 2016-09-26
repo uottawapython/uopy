@@ -8,6 +8,8 @@ A Webapp built with the Django framework displaying information and events for t
 - Fork this repo
 - Navigate to the root directory of the project
 - <b>pip install -r requirements/development.txt</b>
+- vim settings/dispatch.py
+- Fill the blank on this line with your computer name `if '_______' in socket.gethostname():`
 - <b>python manage.py migrate</b>
 - Run the tests
 - <b>py.test -v</b>
