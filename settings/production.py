@@ -5,6 +5,7 @@ from .base import *
 #Secret should come from os.environ or from a file
 SECRET_KEY = 'jqvu0ytyr^*-wbkxk(3)-@9m=ht27r&j(r6(9dvw*ai0g^k)3y'
 
+GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-123456-1'
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = False

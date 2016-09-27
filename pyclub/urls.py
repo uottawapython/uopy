@@ -22,7 +22,8 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^', include('applications.main.urls')),
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    url(r'^adminclub/', include(admin.site.urls)),
 ]
 
 
