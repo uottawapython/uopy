@@ -50,7 +50,7 @@ BASE_APPS =  (
 )
 THIRD_PARTY_APPS =  (
     #'MySQLdb',
-    'analytical'
+    'analytical',
 )
 LOCAL_APPS = (
     'applications.main',

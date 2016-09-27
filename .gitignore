@@ -18,11 +18,7 @@ build/
 tests/report/
 *.sqlite3
 cache/
-#*/dev.log
-#*/prod.log
-#*/*.log
 .coverage
-logs/*
 lib
 
 secret_key.txt
